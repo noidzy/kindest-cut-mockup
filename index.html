@@ -82,7 +82,7 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 .btn.green:hover{background:var(--green-deep)}
 .btn.line{background:transparent;color:var(--ink);border:1px solid var(--line);}
 .btn.line:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.tel{font-family:var(--display);font-size:var(--t-1);font-weight:600;color:var(--ink);white-space:nowrap}
+.tel{font-family:var(--display);font-size:var(--t-1);font-weight:600;color:var(--ink);white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
 
 /* ---------------- nav ---------------- */
 .nav{position:absolute;top:0;left:0;right:0;z-index:40}
@@ -90,13 +90,13 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 .logo{display:flex;align-items:center;gap:.6rem}
 .logo img{width:40px;height:40px}
 .logo b{font-family:var(--display);font-size:1.02rem;font-weight:600;color:#fff;letter-spacing:-.01em;line-height:1.1}
-.logo b span{display:block;font-family:var(--sans);font-size:.56rem;font-weight:600;letter-spacing:.26em;color:var(--amber-soft)}
+.logo b span{display:block;font-family:var(--sans);font-size:.63rem;font-weight:600;letter-spacing:.26em;color:var(--amber-soft)}
 .links{margin-left:auto;display:flex;align-items:center;gap:clamp(1rem,2.4vw,2.3rem)}
 .links a{font-size:var(--t-sm);font-weight:500;color:#e7efea;position:relative;padding-block:.3rem}
 .links a.tel{color:#fff}
 .links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--amber-soft);transition:width .22s ease}
 .links a:hover::after{width:100%}
-.burger{display:none;margin-left:auto;background:none;border:0;font-size:1.5rem;color:#fff;cursor:pointer;line-height:1}
+.burger{display:none;margin-left:auto;background:none;border:0;font-size:1.6rem;color:#fff;cursor:pointer;line-height:1;padding:.5rem;margin-right:-.5rem}
 
 /* ---------------- hero ---------------- */
 .hero{position:relative;background:var(--forest);overflow:hidden}
@@ -168,7 +168,8 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 .svc p{font-size:var(--t-sm);line-height:1.65;flex:1;max-width:34ch}
 .svc .more{
   font-size:var(--t-xs);font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--green);display:inline-flex;align-items:center;gap:.5rem;margin-top:.2rem
+  color:var(--green);display:inline-flex;align-items:center;gap:.5rem;
+  min-height:44px;margin-top:-.4rem;align-self:flex-start
 }
 .svc .more span{transition:transform .22s ease;display:inline-block}
 .svc article:hover .more span{transform:translateX(5px)}
@@ -243,12 +244,53 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 .faq details[open] summary::after{transform:translateY(-25%) rotate(225deg)}
 .faq .a{padding:0 3rem 1.5rem 0;font-size:var(--t-0);max-width:70ch}
 
-/* ---------------- quote band ---------------- */
-.quote{background:var(--green);color:#fff;text-align:center}
-.quote h2{color:#fff;max-width:20ch;margin-inline:auto}
-.quote p{max-width:52ch;margin:1.1rem auto 0;color:#d7efe4}
-.quote .row{display:flex;flex-wrap:wrap;gap:1.1rem;justify-content:center;align-items:center;margin-top:2.1rem}
-.quote .tel{color:#fff;font-size:var(--t-2)}
+/* ---------------- advice / blog ---------------- */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.1rem,2.4vw,2rem);margin-top:clamp(2.2rem,4vw,3rem)}
+.post{display:flex;flex-direction:column;gap:.85rem;background:none}
+.post .shot{aspect-ratio:3/2;overflow:hidden;background:var(--line-soft)}
+.post .shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.post:hover .shot img{transform:scale(1.04)}
+.post time{font-size:var(--t-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:700}
+.post h3{font-size:var(--t-1);line-height:1.28}
+.post:hover h3{color:var(--green)}
+.post p{font-size:var(--t-sm);line-height:1.6}
+.post .rm{font-size:var(--t-xs);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+  display:inline-flex;align-items:center;gap:.45rem;min-height:40px}
+.post:hover .rm{color:var(--green)}
+
+/* ---------------- quote + lead form ---------------- */
+.quote{background:var(--forest);color:#c6dccf}
+.quote h2{color:#fff}
+.quote-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4.5rem);margin-top:clamp(1.8rem,3vw,2.6rem)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.field{display:flex;flex-direction:column;gap:.38rem;margin-bottom:.9rem}
+.field label{font-size:var(--t-xs);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9dbcab}
+.field input,.field textarea,.field select{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;
+  padding:.78rem .85rem;font-family:var(--sans);font-size:var(--t-0);border-radius:0;
+  transition:border-color .18s,background .18s
+}
+.field textarea{min-height:110px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#7e9b8c}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;border-color:var(--amber-soft);background:rgba(255,255,255,.1)
+}
+.form-note{font-size:var(--t-xs);color:#8fae9e;margin-top:.7rem;max-width:46ch}
+.sent{
+  border:1px solid rgba(232,201,135,.45);background:rgba(232,201,135,.08);
+  padding:clamp(1.4rem,3vw,2rem);display:none
+}
+.sent b{display:block;font-family:var(--display);font-size:var(--t-2);color:#fff;font-weight:600;margin-bottom:.5rem}
+form.done{display:none}
+form.done + .sent{display:block}
+.contact-detail{margin-bottom:1.5rem}
+.contact-detail b{display:block;font-family:var(--display);font-size:var(--t-1);font-weight:600;color:#fff;margin-bottom:.2rem}
+.contact-detail a{color:#fff;border-bottom:1px solid rgba(255,255,255,.3)}
+.contact-detail a:hover{border-bottom-color:var(--amber-soft);color:var(--amber-soft)}
+.hours{width:100%;border-collapse:collapse;font-size:var(--t-sm);margin-top:.4rem}
+.hours td{padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.11)}
+.hours td:last-child{text-align:right;color:#e7efea}
+.hours tr:last-child td{border-bottom:0}
 
 /* ---------------- footer ---------------- */
 .foot{background:var(--forest-2);color:#8aa89a;font-size:var(--t-sm)}
@@ -267,13 +309,23 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
   .svc{grid-template-columns:repeat(2,1fr)}
   .areas-grid{grid-template-columns:repeat(2,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
+  .posts{grid-template-columns:1fr 1fr}
+  .quote-grid{grid-template-columns:1fr}
 }
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr;min-height:0}
-  .hero-media{height:min(58vw,340px);order:-1;margin-left:0}
-  .hero-media::before{background:linear-gradient(to bottom,rgba(248,246,241,0) 55%,var(--paper) 100%)}
-  .hero-media::after{display:none}
-  .hero-copy{padding:clamp(4.5rem,14vw,6rem) var(--gut) clamp(2.5rem,8vw,3.5rem);padding-left:var(--gut)}
+  .hero-media{height:min(72vw,400px);order:-1;margin-left:0}
+  .hero-media::before{
+    background:linear-gradient(to bottom,
+      rgba(4,48,31,.35) 0%, rgba(4,48,31,.12) 30%,
+      rgba(4,48,31,.55) 72%, rgba(4,48,31,.9) 90%, var(--forest) 100%)
+  }
+  .hero-media::after{
+    display:block;left:0;right:0;bottom:-1px;height:34%;
+    background:linear-gradient(to top,var(--forest) 0%,rgba(4,48,31,.5) 55%,rgba(4,48,31,0) 100%)
+  }
+  .hero-copy{padding-top:clamp(1.4rem,5vw,2.2rem)}
+  .hero-copy{padding:0 var(--gut) clamp(2.8rem,9vw,3.6rem);padding-left:var(--gut)}
   .links{display:none}
   .burger{display:block}
   .bar ul{grid-template-columns:repeat(2,1fr)}
@@ -284,8 +336,13 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 }
 @media (max-width:560px){
   .svc{grid-template-columns:1fr}
+  .areas-grid ul,.foot ul{gap:.15rem}
+  .areas-grid li a,.foot a,.contact-detail a{display:inline-flex;align-items:center;min-height:40px}
+  .faq summary{padding-block:1.15rem}
   .bar ul{grid-template-columns:1fr}
   .areas-grid,.foot-grid{grid-template-columns:1fr}
+  .posts{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr;gap:0}
 }
 @media (prefers-reduced-motion:reduce){
   .marquee{-webkit-mask-image:none;mask-image:none;overflow-x:auto}
@@ -530,15 +587,99 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
   </div>
 </section>
 
-<!-- ================= QUOTE ================= -->
+<!-- ================= ADVICE ================= -->
+<section class="stack" id="advice">
+  <div class="wrap">
+    <div class="head-2col">
+      <div>
+        <span class="eyebrow">Advice</span>
+        <h2>Worth knowing<br><em class="soft">before you book.</em></h2>
+      </div>
+      <p class="lede" style="padding-bottom:.4rem">Straight answers about Perth trees, written by the people who climb them.</p>
+    </div>
+    <div class="posts">
+      <a class="post" href="/advice/how-trees-boost-your-perth-homes-value">
+        <div class="shot"><img src="img/gardener.jpg" alt="A Kindest Cut gardener working on a Perth property"></div>
+        <time datetime="2026-07-16">16 July 2026</time>
+        <h3>How Trees Boost Your Perth Home's Value</h3>
+        <p>Established trees add shade, street appeal and real dollars. What buyers actually notice, and what puts them off.</p>
+        <span class="rm">Read more &rarr;</span>
+      </a>
+      <a class="post" href="/advice/why-wilting-leaves-mean-its-time-for-an-arborist">
+        <div class="shot"><img src="img/cutting.jpg" alt="An arborist inspecting and cutting a stressed tree"></div>
+        <time datetime="2026-05-22">22 May 2026</time>
+        <h3>Why Wilting Leaves Mean It's Time for an Arborist</h3>
+        <p>Wilting is rarely just thirst. What it usually means in Perth soil, and how long you have to act on it.</p>
+        <span class="rm">Read more &rarr;</span>
+      </a>
+      <a class="post" href="/advice/the-ultimate-guide-to-expert-tree-care-services">
+        <div class="shot"><img src="img/high-trim.jpeg" alt="An arborist pruning high branches on a Perth property"></div>
+        <time datetime="2026-02-22">22 February 2026</time>
+        <h3>The Ultimate Guide to Expert Tree Care Services</h3>
+        <p>Pruning, removal, stumps and mulching. What each job involves and which one you actually need.</p>
+        <span class="rm">Read more &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE + LEAD FORM ================= -->
 <section class="stack quote" id="quote">
   <div class="wrap">
-    <span class="eyebrow pale" style="justify-content:center">Free, no obligation</span>
+    <span class="eyebrow pale">Free, no obligation</span>
     <h2>Send us a photo of the tree.</h2>
-    <p>We can give you a rough idea over the phone and a fixed price once we have seen it. Most quotes come back the same day.</p>
-    <div class="row">
-      <a class="btn" href="tel:+61403949123">Call for a quote</a>
-      <a class="tel" href="tel:+61403949123">0403 949 123</a>
+    <p class="lede" style="color:#bcd3c7;margin-top:1rem">We can give you a rough idea over the phone, and a fixed price once we have seen it. Most quotes come back the same day.</p>
+
+    <div class="quote-grid">
+      <div>
+        <form id="quoteForm" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your name" required></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="04.." required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+            <div class="field"><label for="f-suburb">Suburb</label><input id="f-suburb" name="suburb" placeholder="Where is the job?" required></div>
+          </div>
+          <div class="field">
+            <label for="f-service">What do you need?</label>
+            <select id="f-service" name="service">
+              <option>Tree removal</option>
+              <option>Stump grinding</option>
+              <option>Pruning or crown work</option>
+              <option>Hedge trimming</option>
+              <option>Mulching or woodchipping</option>
+              <option>Powerline clearance</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-detail">Tell us about the tree</label>
+            <textarea id="f-detail" name="detail" placeholder="Rough height, how close to the house, and anything we should know about access. A photo helps most of all."></textarea>
+          </div>
+          <button class="btn" type="submit">Send enquiry</button>
+          <p class="form-note">We reply to most enquiries the same working day. For anything urgent, please call instead.</p>
+        </form>
+        <div class="sent" role="status" aria-live="polite">
+          <b>Thanks, that is through.</b>
+          <p style="color:#c6dccf">We will come back to you the same working day. If it is urgent, call <a href="tel:+61403949123" style="color:var(--amber-soft)">0403 949 123</a>.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-detail"><b>Call us</b><a href="tel:+61403949123">0403 949 123</a></div>
+        <div class="contact-detail"><b>Email</b><a href="mailto:thekindestcutarb@gmail.com">thekindestcutarb@gmail.com</a></div>
+        <div class="contact-detail"><b>Based in</b>Osborne Park, Western Australia<br>Serving Perth north, south and the Hills</div>
+        <div class="contact-detail">
+          <b>Hours</b>
+          <table class="hours">
+            <tr><td>Mon to Fri</td><td>8:00am to 5:00pm</td></tr>
+            <tr><td>Saturday</td><td>By appointment</td></tr>
+            <tr><td>Sunday</td><td>By appointment</td></tr>
+          </table>
+          <p style="font-size:var(--t-sm);margin-top:.7rem;color:#8fae9e">Available outside these hours for emergencies.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -583,7 +724,7 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
           <li><a href="/areas-we-serve">Areas We Serve</a></li>
           <li><a href="/about">About Us</a></li>
           <li><a href="/tree-removal-cost-perth">What It Costs</a></li>
-          <li><a href="/advice">Advice</a></li>
+          <li><a href="#advice">Advice</a></li>
           <li><a href="/privacy-policy">Privacy Policy</a></li>
           <li><a href="#quote">Contact</a></li>
         </ul>
@@ -624,6 +765,14 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
     {"@type":"Question","name":"Are you insured?","acceptedAnswer":{"@type":"Answer","text":"Fully insured and qualified. We are happy to provide the certificate of currency before we start."}},
     {"@type":"Question","name":"Do you do emergency call outs?","acceptedAnswer":{"@type":"Answer","text":"Yes, outside working hours for genuine emergencies such as a tree down after a storm or a limb over a driveway."}}]
 }
+</script>
+
+<script>
+  document.getElementById('quoteForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    this.classList.add('done');
+    this.nextElementSibling.scrollIntoView({block:'center', behavior:'smooth'});
+  });
 </script>
 
 </body>
