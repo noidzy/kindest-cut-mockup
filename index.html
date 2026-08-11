@@ -99,20 +99,28 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 
 /* ---------------- hero ---------------- */
 .hero{position:relative;background:var(--paper);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:min(88vh,860px)}
-.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(7rem,12vw,9rem) clamp(1.15rem,4vw,4.5rem) clamp(3rem,6vw,5rem) var(--gut)}
-.hero-copy h1{margin-bottom:1.3rem}
-.hero-copy .lede{max-width:44ch}
-.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem;margin-top:2.2rem}
-.hero-media{position:relative}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
-.badge{
-  position:absolute;left:0;bottom:clamp(2rem,6vw,4.5rem);transform:translateX(-50%);
-  background:var(--paper);padding:1.15rem 1.5rem;text-align:center;min-width:132px;
-  box-shadow:0 14px 40px rgba(4,48,31,.16)
+.hero-grid{display:grid;grid-template-columns:1.04fr 1fr;min-height:min(66vh,620px)}
+.hero-copy{
+  position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(6rem,10vw,7.5rem) clamp(1.15rem,3vw,3rem) clamp(2.6rem,5vw,3.8rem) var(--gut)
 }
-.badge b{display:block;font-family:var(--display);font-size:2rem;font-weight:600;color:var(--green);line-height:1}
-.badge span{display:block;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--body);margin-top:.35rem}
+.hero-copy h1{margin-bottom:1.15rem}
+.hero-copy .lede{max-width:42ch;font-size:var(--t-0)}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem;margin-top:1.9rem}
+
+/* photo bleeds under the copy and dissolves into the paper, no hard seam */
+.hero-media{position:relative;z-index:1;margin-left:clamp(-11rem,-9vw,-3.5rem);overflow:hidden}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-media::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg,
+    var(--paper) 0%, rgba(248,246,241,.97) 14%, rgba(248,246,241,.72) 30%,
+    rgba(248,246,241,.28) 48%, rgba(248,246,241,0) 66%)
+}
+.hero-media::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;height:38%;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,var(--paper) 0%,rgba(248,246,241,0) 100%)
+}
 
 /* ---------------- trust bar ---------------- */
 .bar{background:var(--forest);color:#cfe3d8}
@@ -125,58 +133,60 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 
 /* ---------------- services ---------------- */
 .head-2col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:end}
+.head-1col{max-width:62ch}
+.head-1col .lede{margin-top:1.1rem}
+
+/* hairlines come from the 1px gap showing the grid's own background,
+   so every cell is even and there are no edge case rules */
 .svc{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--line)
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+  margin-top:clamp(2.6rem,5vw,4rem)
 }
 .svc article{
-  padding:clamp(1.7rem,3vw,2.5rem) clamp(1.2rem,2.4vw,2.2rem) clamp(1.7rem,3vw,2.4rem) 0;
-  border-bottom:1px solid var(--line);border-right:1px solid var(--line);
-  display:flex;flex-direction:column;gap:.7rem;transition:background .2s ease
+  background:var(--paper);padding:clamp(1.9rem,3.2vw,2.8rem) clamp(1.5rem,2.6vw,2.2rem);
+  display:flex;flex-direction:column;gap:.85rem;
+  transition:background .25s ease;position:relative
 }
-.svc article:nth-child(3n){border-right:0;padding-right:0}
+.svc article::before{
+  content:'';position:absolute;top:0;left:0;height:2px;width:0;background:var(--green);
+  transition:width .32s cubic-bezier(.4,0,.2,1)
+}
 .svc article:hover{background:var(--paper-2)}
-.svc .ico{color:var(--green);margin-bottom:.15rem}
-.svc h3{color:var(--ink)}
-.svc p{font-size:var(--t-sm);line-height:1.62;flex:1}
+.svc article:hover::before{width:100%}
+.svc h3{color:var(--ink);font-size:var(--t-2);line-height:1.1}
+.svc p{font-size:var(--t-sm);line-height:1.65;flex:1;max-width:34ch}
 .svc .more{
   font-size:var(--t-xs);font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--ink);display:inline-flex;align-items:center;gap:.45rem
+  color:var(--green);display:inline-flex;align-items:center;gap:.5rem;margin-top:.2rem
 }
-.svc article:hover .more{color:var(--green)}
-.svc .more span{transition:transform .2s ease;display:inline-block}
-.svc article:hover .more span{transform:translateX(4px)}
+.svc .more span{transition:transform .22s ease;display:inline-block}
+.svc article:hover .more span{transform:translateX(5px)}
 
-@media (max-width:1000px){
-  .svc{grid-template-columns:repeat(2,1fr)}
-  .svc article:nth-child(3n){border-right:1px solid var(--line);padding-right:clamp(1.2rem,2.4vw,2.2rem)}
-  .svc article:nth-child(2n){border-right:0;padding-right:0}
+@media (max-width:1000px){ .svc{grid-template-columns:repeat(2,1fr)} }
+
+/* ---------------- work: endless marquee ---------------- */
+.work{background:var(--paper-2);overflow:hidden}
+.marquee{
+  --mgap:clamp(.55rem,1vw,.9rem);--mspeed:64s;
+  margin-top:clamp(2.2rem,4vw,3.2rem);overflow:hidden;
+  /* fade both ends so it reads as continuous, not clipped */
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)
 }
-@media (max-width:860px){
-  .hero-grid{grid-template-columns:1fr;min-height:0}
-  .hero-media{height:min(56vw,380px);order:-1}
-  .hero-copy{padding:clamp(5.5rem,16vw,7rem) var(--gut) clamp(2.5rem,8vw,3.5rem)}
-  .badge{display:none}
-  .links{display:none}
-  .burger{display:block}
-  .bar ul{grid-template-columns:repeat(2,1fr)}
-  .head-2col{grid-template-columns:1fr}
+.marquee-track{display:flex;width:max-content;gap:var(--mgap);animation:drift var(--mspeed) linear infinite}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(calc(-50% - (var(--mgap) / 2)))}}
+.marquee figure{
+  position:relative;flex:none;width:clamp(232px,25vw,340px);aspect-ratio:4/3;
+  overflow:hidden;background:var(--line-soft)
 }
-/* ---------------- work ---------------- */
-.work{background:var(--paper-2)}
-.work-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(120px,15vw,190px);
-  gap:clamp(.5rem,1vw,.85rem);margin-top:clamp(2.2rem,4vw,3.2rem)
-}
-.work-grid figure{position:relative;overflow:hidden;background:var(--line-soft)}
-.work-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.work-grid figure:hover img{transform:scale(1.04)}
-.work-grid figcaption{
+.marquee img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.marquee figure:hover img{transform:scale(1.05)}
+.marquee figcaption{
   position:absolute;left:0;bottom:0;background:var(--paper);color:var(--ink);
   font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .8rem
 }
-.w-tall{grid-row:span 2}
-.w-wide{grid-column:span 2}
 
 /* ---------------- why ---------------- */
 .why{background:var(--forest);color:#c6dccf}
@@ -226,7 +236,7 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 /* ---------------- quote band ---------------- */
 .quote{background:var(--green);color:#fff;text-align:center}
 .quote h2{color:#fff;max-width:20ch;margin-inline:auto}
-.quote p{max-width:52ch;margin:1.1rem auto 0;color:#d7 efe4;color:#d7efe4}
+.quote p{max-width:52ch;margin:1.1rem auto 0;color:#d7efe4}
 .quote .row{display:flex;flex-wrap:wrap;gap:1.1rem;justify-content:center;align-items:center;margin-top:2.1rem}
 .quote .tel{color:#fff;font-size:var(--t-2)}
 
@@ -242,23 +252,34 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
   display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:var(--t-xs)
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width:1000px){
-  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .svc{grid-template-columns:repeat(2,1fr)}
   .areas-grid{grid-template-columns:repeat(2,1fr)}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-media{height:min(58vw,340px);order:-1;margin-left:0}
+  .hero-media::before{background:linear-gradient(to bottom,rgba(248,246,241,0) 55%,var(--paper) 100%)}
+  .hero-media::after{display:none}
+  .hero-copy{padding:clamp(4.5rem,14vw,6rem) var(--gut) clamp(2.5rem,8vw,3.5rem)}
+  .links{display:none}
+  .burger{display:block}
+  .bar ul{grid-template-columns:repeat(2,1fr)}
+  .head-2col{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
   .why-media{order:-1;max-width:420px}
   .why-tag{right:0}
 }
 @media (max-width:560px){
   .svc{grid-template-columns:1fr}
-  .svc article,.svc article:nth-child(3n),.svc article:nth-child(2n){border-right:0;padding-right:0}
   .bar ul{grid-template-columns:1fr}
-  .work-grid{grid-template-columns:1fr;grid-auto-rows:200px}
-  .w-tall,.w-wide{grid-row:span 1;grid-column:span 1}
   .areas-grid,.foot-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .marquee{-webkit-mask-image:none;mask-image:none;overflow-x:auto}
+  .marquee-track{animation:none}
 }
 </style>
 </head>
@@ -297,7 +318,6 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
     </div>
     <div class="hero-media">
       <img src="img/climber.jpg" alt="A Kindest Cut arborist roped up high in a Perth tree">
-      <div class="badge"><b>100%</b><span>Insured &amp; qualified</span></div>
     </div>
   </div>
 </header>
@@ -317,47 +337,39 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 <!-- ================= SERVICES ================= -->
 <section class="stack" id="services">
   <div class="wrap">
-    <div class="head-2col">
-      <div>
-        <span class="eyebrow">What we do</span>
-        <h2>From one awkward limb<br>to <em class="soft">the whole block.</em></h2>
-      </div>
-      <p class="lede" style="padding-bottom:.4rem">Every job gets a qualified arborist on site, a fixed price before we start, and the mess taken with us when we go.</p>
+    <div class="head-1col">
+      <span class="eyebrow">What we do</span>
+      <h2>From one awkward limb<br>to <em class="soft">the whole block.</em></h2>
+      <p class="lede">Every job gets a qualified arborist on site, a fixed price before we start, and the mess taken with us when we go.</p>
     </div>
 
     <div class="svc">
       <article>
-        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V15"/><path d="M12 15 6.5 9.5A5 5 0 0 1 12 2a5 5 0 0 1 5.5 7.5L12 15Z"/><path d="m5 22 3-4"/><path d="m19 22-3-4"/></svg></span>
         <h3>Tree Removal</h3>
         <p>Whole trees, dangerous limbs and dismantles in tight backyards. Crane and rigging where access is difficult.</p>
         <a class="more" href="/tree-services/tree-removal-perth">Learn more <span>&rarr;</span></a>
       </article>
       <article>
-        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="17" rx="8" ry="4"/><path d="M8 17V9m8 8V9"/><path d="M4 9h16"/><path d="M12 9V3"/></svg></span>
         <h3>Stump Grinding</h3>
         <p>Ground out below the surface so you can turf, pave or plant straight over it. Any size, including tight rear access.</p>
         <a class="more" href="/tree-services/stump-grinding-perth">Learn more <span>&rarr;</span></a>
       </article>
       <article>
-        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21V8"/><path d="M12 8 8 4m4 4 4-4M12 13l-5-3m5 3 5-3"/></svg></span>
         <h3>Pruning &amp; Crown Work</h3>
         <p>Crown lifting, reduction and deadwooding. Cuts made where the tree can actually heal, not hacked back.</p>
         <a class="more" href="/tree-services/tree-pruning-perth">Learn more <span>&rarr;</span></a>
       </article>
       <article>
-        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18h18M3 13h18M3 8h18"/><path d="M7 8V5m5 3V5m5 3V5"/></svg></span>
         <h3>Hedge Trimming</h3>
         <p>Including tall hedges most crews cannot reach. Clean lines, sharp edges, every clipping taken away.</p>
         <a class="more" href="/gardening-and-turf/hedge-trimming-perth">Learn more <span>&rarr;</span></a>
       </article>
       <article>
-        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17c4-6 12-6 16 0"/><path d="M7 17v3m5-3v3m5-3v3"/><path d="M12 11V3m0 0L9 6m3-3 3 3"/></svg></span>
         <h3>Mulching &amp; Woodchipping</h3>
         <p>We chip on site. Keep the mulch for your garden beds, or we take the lot away with us.</p>
         <a class="more" href="/gardening-and-turf/tree-mulching-perth">Learn more <span>&rarr;</span></a>
       </article>
       <article>
-        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v18M18 3v18"/><path d="M6 8c6 3 6 3 12 0M6 14c6 3 6 3 12 0"/></svg></span>
         <h3>Powerline Clearance</h3>
         <p>Branches near service lines cleared to the required clearances, safely and to spec.</p>
         <a class="more" href="/tree-services/powerline-clearance-perth">Learn more <span>&rarr;</span></a>
@@ -376,15 +388,29 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
       </div>
       <p class="lede" style="padding-bottom:.4rem">Marri, jarrah, lemon scented gums and the odd palm nobody wants. We work on them every week.</p>
     </div>
-    <div class="work-grid">
-      <figure class="w-tall"><img src="img/climber.jpg" alt="An arborist roped up high in a Perth tree"><figcaption>Climbing</figcaption></figure>
-      <figure class="w-wide"><img src="img/crane.jpg" alt="A crane lifting a large tree section out of a Perth backyard"><figcaption>Crane removal</figcaption></figure>
-      <figure><img src="img/gardener.jpg" alt="A Kindest Cut gardener in yellow workwear on site"><figcaption>Gardening</figcaption></figure>
-      <figure><img src="img/cutting.jpg" alt="An arborist cutting a large limb with a chainsaw"><figcaption>Dismantling</figcaption></figure>
-      <figure><img src="img/high-trim.jpeg" alt="A worker trimming high branches above a Perth property"><figcaption>High pruning</figcaption></figure>
-      <figure><img src="img/excavator.png" alt="An excavator clearing cut branches after a removal"><figcaption>Clean up</figcaption></figure>
-    </div>
   </div>
+
+  <div class="marquee">
+      <div class="marquee-track">
+        <figure><img src="img/crane.jpg" alt="A crane lifting a large tree section out of a Perth backyard"><figcaption>Crane removal</figcaption></figure>
+        <figure><img src="img/climber.jpg" alt="An arborist roped up high in a Perth tree"><figcaption>Climbing</figcaption></figure>
+        <figure><img src="img/cutting.jpg" alt="An arborist cutting a large limb with a chainsaw"><figcaption>Dismantling</figcaption></figure>
+        <figure><img src="img/hero.jpg" alt="Two Kindest Cut arborists working on a large Perth tree"><figcaption>High pruning</figcaption></figure>
+        <figure><img src="img/two-workers.png" alt="Two arborists trimming a tall tree in a Perth garden"><figcaption>Crown reduction</figcaption></figure>
+        <figure><img src="img/excavator.png" alt="An excavator clearing cut branches after a removal"><figcaption>Clean up</figcaption></figure>
+        <figure><img src="img/gardener.jpg" alt="A Kindest Cut gardener in yellow workwear on site"><figcaption>Gardening</figcaption></figure>
+        <figure><img src="img/high-trim.jpeg" alt="An arborist pruning high branches on a Perth property"><figcaption>On site</figcaption></figure>
+        <!-- duplicated once so the loop is seamless -->
+        <figure aria-hidden="true"><img src="img/crane.jpg" alt=""><figcaption>Crane removal</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/climber.jpg" alt=""><figcaption>Climbing</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/cutting.jpg" alt=""><figcaption>Dismantling</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/hero.jpg" alt=""><figcaption>High pruning</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/two-workers.png" alt=""><figcaption>Crown reduction</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/excavator.png" alt=""><figcaption>Clean up</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/gardener.jpg" alt=""><figcaption>Gardening</figcaption></figure>
+        <figure aria-hidden="true"><img src="img/high-trim.jpeg" alt=""><figcaption>On site</figcaption></figure>
+      </div>
+    </div>
 </section>
 
 <!-- ================= WHY ================= -->
@@ -402,7 +428,7 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
         </div>
       </div>
       <div class="why-media">
-        <img src="img/hero.jpg" alt="Two Kindest Cut arborists in safety gear working on a Perth tree">
+        <img src="img/high-trim.jpeg" alt="A Kindest Cut arborist pruning high branches on a Perth property">
         <div class="why-tag"><b>7 days</b><span>Weekends by appointment</span></div>
       </div>
     </div>
