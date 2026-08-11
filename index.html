@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Arborists Perth | Tree Removal, Lopping &amp; Stump Grinding | The Kindest Cut</title>
+<meta name="description" content="Fully insured Perth arborists. Tree removal, lopping, pruning, stump grinding, hedges and mulching. North and south of the river plus the Hills. Free quotes on 0403 949 123.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#078257;
+  --green-deep:#045c3d;
+  --forest:#04301f;
+  --forest-2:#07281b;
+  --paper:#f8f6f1;
+  --paper-2:#efece3;
+  --ink:#16211b;
+  --body:#55605a;
+  --amber:#b8801f;
+  --amber-soft:#e8c987;
+  --line:#ddd8cd;
+  --line-soft:#e9e5db;
+
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Public Sans',system-ui,-apple-system,Arial,sans-serif;
+
+  --t-xs:.72rem;
+  --t-sm:clamp(.82rem,.8rem + .1vw,.9rem);
+  --t-0:clamp(.95rem,.92rem + .16vw,1.04rem);
+  --t-1:clamp(1.08rem,1rem + .34vw,1.24rem);
+  --t-2:clamp(1.5rem,1.25rem + 1.1vw,2.1rem);
+  --t-3:clamp(2rem,1.55rem + 2.1vw,3.3rem);
+  --t-4:clamp(2.6rem,1.75rem + 4vw,4.9rem);
+
+  --gut:clamp(1.15rem,5vw,4.5rem);
+  --stack:clamp(3.4rem,8vw,7rem);
+  --max:1280px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--body);
+  font-family:var(--sans);font-size:var(--t-0);line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
+.stack{padding-block:var(--stack)}
+
+h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;line-height:1.06;text-wrap:balance;letter-spacing:-.012em}
+h1{font-size:var(--t-4)}
+h2{font-size:var(--t-3)}
+h3{font-size:var(--t-1);line-height:1.25}
+em.soft{font-style:italic;font-weight:400;color:var(--green)}
+
+.eyebrow{
+  display:flex;align-items:center;gap:.7rem;font-family:var(--sans);
+  font-size:var(--t-xs);font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--green);margin-bottom:1.1rem
+}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--green);flex:none}
+.eyebrow.pale{color:var(--amber-soft)}
+.eyebrow.pale::before{background:var(--amber-soft)}
+.lede{font-size:var(--t-1);max-width:56ch;line-height:1.6}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;background:var(--amber);color:#fff;
+  font-family:var(--sans);font-weight:600;font-size:var(--t-sm);letter-spacing:.06em;
+  text-transform:uppercase;padding:1em 1.75em;border:0;cursor:pointer;
+  transition:background .18s ease,transform .18s ease
+}
+.btn:hover{background:#9d6a14;transform:translateY(-1px)}
+.btn.green{background:var(--green)}
+.btn.green:hover{background:var(--green-deep)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--line);}
+.btn.line:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tel{font-family:var(--display);font-size:var(--t-1);font-weight:600;color:var(--ink);white-space:nowrap}
+
+/* ---------------- nav ---------------- */
+.nav{position:absolute;top:0;left:0;right:0;z-index:40}
+.nav .wrap{display:flex;align-items:center;gap:1.5rem;padding-block:1.35rem}
+.logo{display:flex;align-items:center;gap:.6rem}
+.logo img{width:40px;height:40px}
+.logo b{font-family:var(--display);font-size:1.02rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;line-height:1.1}
+.logo b span{display:block;font-family:var(--sans);font-size:.56rem;font-weight:600;letter-spacing:.26em;color:var(--green)}
+.links{margin-left:auto;display:flex;align-items:center;gap:clamp(1rem,2.4vw,2.3rem)}
+.links a{font-size:var(--t-sm);font-weight:500;color:var(--ink);position:relative;padding-block:.3rem}
+.links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--green);transition:width .22s ease}
+.links a:hover::after{width:100%}
+.burger{display:none;margin-left:auto;background:none;border:0;font-size:1.5rem;color:var(--ink);cursor:pointer;line-height:1}
+
+/* ---------------- hero ---------------- */
+.hero{position:relative;background:var(--paper);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;min-height:min(88vh,860px)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(7rem,12vw,9rem) clamp(1.15rem,4vw,4.5rem) clamp(3rem,6vw,5rem) var(--gut)}
+.hero-copy h1{margin-bottom:1.3rem}
+.hero-copy .lede{max-width:44ch}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem;margin-top:2.2rem}
+.hero-media{position:relative}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.badge{
+  position:absolute;left:0;bottom:clamp(2rem,6vw,4.5rem);transform:translateX(-50%);
+  background:var(--paper);padding:1.15rem 1.5rem;text-align:center;min-width:132px;
+  box-shadow:0 14px 40px rgba(4,48,31,.16)
+}
+.badge b{display:block;font-family:var(--display);font-size:2rem;font-weight:600;color:var(--green);line-height:1}
+.badge span{display:block;font-size:var(--t-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--body);margin-top:.35rem}
+
+/* ---------------- trust bar ---------------- */
+.bar{background:var(--forest);color:#cfe3d8}
+.bar ul{
+  list-style:none;display:grid;grid-template-columns:repeat(4,1fr);
+  padding-block:1.05rem;gap:.5rem 1.4rem
+}
+.bar li{display:flex;align-items:center;gap:.55rem;font-size:var(--t-sm);font-weight:500;letter-spacing:.01em}
+.bar svg{flex:none;color:var(--amber-soft)}
+
+/* ---------------- services ---------------- */
+.head-2col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:end}
+.svc{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid var(--line)
+}
+.svc article{
+  padding:clamp(1.7rem,3vw,2.5rem) clamp(1.2rem,2.4vw,2.2rem) clamp(1.7rem,3vw,2.4rem) 0;
+  border-bottom:1px solid var(--line);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:.7rem;transition:background .2s ease
+}
+.svc article:nth-child(3n){border-right:0;padding-right:0}
+.svc article:hover{background:var(--paper-2)}
+.svc .ico{color:var(--green);margin-bottom:.15rem}
+.svc h3{color:var(--ink)}
+.svc p{font-size:var(--t-sm);line-height:1.62;flex:1}
+.svc .more{
+  font-size:var(--t-xs);font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);display:inline-flex;align-items:center;gap:.45rem
+}
+.svc article:hover .more{color:var(--green)}
+.svc .more span{transition:transform .2s ease;display:inline-block}
+.svc article:hover .more span{transform:translateX(4px)}
+
+@media (max-width:1000px){
+  .svc{grid-template-columns:repeat(2,1fr)}
+  .svc article:nth-child(3n){border-right:1px solid var(--line);padding-right:clamp(1.2rem,2.4vw,2.2rem)}
+  .svc article:nth-child(2n){border-right:0;padding-right:0}
+}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-media{height:min(56vw,380px);order:-1}
+  .hero-copy{padding:clamp(5.5rem,16vw,7rem) var(--gut) clamp(2.5rem,8vw,3.5rem)}
+  .badge{display:none}
+  .links{display:none}
+  .burger{display:block}
+  .bar ul{grid-template-columns:repeat(2,1fr)}
+  .head-2col{grid-template-columns:1fr}
+}
+/* ---------------- work ---------------- */
+.work{background:var(--paper-2)}
+.work-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(120px,15vw,190px);
+  gap:clamp(.5rem,1vw,.85rem);margin-top:clamp(2.2rem,4vw,3.2rem)
+}
+.work-grid figure{position:relative;overflow:hidden;background:var(--line-soft)}
+.work-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.work-grid figure:hover img{transform:scale(1.04)}
+.work-grid figcaption{
+  position:absolute;left:0;bottom:0;background:var(--paper);color:var(--ink);
+  font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.5rem .8rem
+}
+.w-tall{grid-row:span 2}
+.w-wide{grid-column:span 2}
+
+/* ---------------- why ---------------- */
+.why{background:var(--forest);color:#c6dccf}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.why h2{color:#fff}
+.why .pt{display:flex;gap:1.1rem;padding-block:1.35rem;border-bottom:1px solid rgba(255,255,255,.13)}
+.why .pt:last-of-type{border-bottom:0}
+.why .pt b{display:block;font-family:var(--display);font-size:var(--t-1);font-weight:600;color:#fff;margin-bottom:.25rem}
+.why .pt p{font-size:var(--t-sm);line-height:1.6}
+.why .n{
+  font-family:var(--display);font-size:.85rem;font-weight:700;color:var(--amber-soft);
+  border:1px solid rgba(232,201,135,.4);width:30px;height:30px;flex:none;
+  display:grid;place-items:center;margin-top:.2rem
+}
+.why-media{position:relative}
+.why-media img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.why-tag{
+  position:absolute;top:-18px;right:-18px;background:var(--amber);color:#fff;
+  padding:1rem 1.15rem;text-align:center;max-width:150px
+}
+.why-tag b{display:block;font-family:var(--display);font-size:1.5rem;font-weight:600;line-height:1}
+.why-tag span{display:block;font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem;opacity:.95}
+
+/* ---------------- areas ---------------- */
+.areas-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.5rem);margin-top:clamp(2.2rem,4vw,3rem)}
+.areas-grid h3{font-size:var(--t-0);letter-spacing:.14em;text-transform:uppercase;font-family:var(--sans);font-weight:700;color:var(--green);margin-bottom:.9rem}
+.areas-grid ul{list-style:none;display:flex;flex-direction:column;gap:.42rem}
+.areas-grid li a{font-size:var(--t-sm);border-bottom:1px solid transparent;transition:border-color .15s}
+.areas-grid li a:hover{border-bottom-color:var(--green);color:var(--green)}
+
+/* ---------------- faq ---------------- */
+.faq{max-width:860px;margin-top:clamp(2rem,4vw,3rem);border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:1.35rem 3rem 1.35rem 0;position:relative;
+  font-family:var(--display);font-size:var(--t-1);font-weight:600;color:var(--ink);line-height:1.35
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:'';position:absolute;right:.45rem;top:calc(1.35rem + .55em);
+  width:11px;height:11px;border-right:1.5px solid var(--green);border-bottom:1.5px solid var(--green);
+  transform:translateY(-50%) rotate(45deg);transition:transform .22s ease
+}
+.faq details[open] summary::after{transform:translateY(-25%) rotate(225deg)}
+.faq .a{padding:0 3rem 1.5rem 0;font-size:var(--t-0);max-width:70ch}
+
+/* ---------------- quote band ---------------- */
+.quote{background:var(--green);color:#fff;text-align:center}
+.quote h2{color:#fff;max-width:20ch;margin-inline:auto}
+.quote p{max-width:52ch;margin:1.1rem auto 0;color:#d7 efe4;color:#d7efe4}
+.quote .row{display:flex;flex-wrap:wrap;gap:1.1rem;justify-content:center;align-items:center;margin-top:2.1rem}
+.quote .tel{color:#fff;font-size:var(--t-2)}
+
+/* ---------------- footer ---------------- */
+.foot{background:var(--forest-2);color:#8aa89a;font-size:var(--t-sm)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:1.8rem 2.4rem;padding-block:clamp(2.8rem,5vw,4rem)}
+.foot h4{font-family:var(--display);color:#fff;font-size:1rem;font-weight:600;margin-bottom:.9rem}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:.42rem}
+.foot a:hover{color:#fff}
+.foot .brand-line{font-family:var(--display);color:#fff;font-size:1.15rem;font-weight:600;margin-bottom:.6rem}
+.foot-base{
+  border-top:1px solid rgba(255,255,255,.1);padding-block:1.15rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:var(--t-xs)
+}
+
+@media (max-width:1000px){
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .areas-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .why-grid{grid-template-columns:1fr}
+  .why-media{order:-1;max-width:420px}
+  .why-tag{right:0}
+}
+@media (max-width:560px){
+  .svc{grid-template-columns:1fr}
+  .svc article,.svc article:nth-child(3n),.svc article:nth-child(2n){border-right:0;padding-right:0}
+  .bar ul{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr;grid-auto-rows:200px}
+  .w-tall,.w-wide{grid-row:span 1;grid-column:span 1}
+  .areas-grid,.foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/">
+      <img src="img/logo.png" alt="The Kindest Cut Arborists">
+      <b>The Kindest Cut<span>Arborists</span></b>
+    </a>
+    <div class="links">
+      <a href="/tree-services">Tree Services</a>
+      <a href="/gardening-and-turf">Gardening &amp; Turf</a>
+      <a href="/areas-we-serve">Areas We Serve</a>
+      <a href="#faq">FAQs</a>
+      <a class="tel" href="tel:+61403949123">0403 949 123</a>
+      <a class="btn" href="#quote">Free quote</a>
+    </div>
+    <button class="burger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Perth &middot; North, south &amp; the Hills</span>
+      <h1>Tree work done<br><em class="soft">properly.</em></h1>
+      <p class="lede">Fully insured, qualified arborists for removal, lopping, pruning and stump grinding. We turn up when we say, and we leave the place tidy.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#quote">Get a free quote</a>
+        <a class="tel" href="tel:+61403949123">0403 949 123</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="img/climber.jpg" alt="A Kindest Cut arborist roped up high in a Perth tree">
+      <div class="badge"><b>100%</b><span>Insured &amp; qualified</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TRUST BAR ================= -->
+<section class="bar">
+  <div class="wrap">
+    <ul>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Fully insured &amp; qualified</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Spider lift for tall access</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>All green waste removed</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>After hours emergencies</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="stack" id="services">
+  <div class="wrap">
+    <div class="head-2col">
+      <div>
+        <span class="eyebrow">What we do</span>
+        <h2>From one awkward limb<br>to <em class="soft">the whole block.</em></h2>
+      </div>
+      <p class="lede" style="padding-bottom:.4rem">Every job gets a qualified arborist on site, a fixed price before we start, and the mess taken with us when we go.</p>
+    </div>
+
+    <div class="svc">
+      <article>
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V15"/><path d="M12 15 6.5 9.5A5 5 0 0 1 12 2a5 5 0 0 1 5.5 7.5L12 15Z"/><path d="m5 22 3-4"/><path d="m19 22-3-4"/></svg></span>
+        <h3>Tree Removal</h3>
+        <p>Whole trees, dangerous limbs and dismantles in tight backyards. Crane and rigging where access is difficult.</p>
+        <a class="more" href="/tree-services/tree-removal-perth">Learn more <span>&rarr;</span></a>
+      </article>
+      <article>
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="17" rx="8" ry="4"/><path d="M8 17V9m8 8V9"/><path d="M4 9h16"/><path d="M12 9V3"/></svg></span>
+        <h3>Stump Grinding</h3>
+        <p>Ground out below the surface so you can turf, pave or plant straight over it. Any size, including tight rear access.</p>
+        <a class="more" href="/tree-services/stump-grinding-perth">Learn more <span>&rarr;</span></a>
+      </article>
+      <article>
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21V8"/><path d="M12 8 8 4m4 4 4-4M12 13l-5-3m5 3 5-3"/></svg></span>
+        <h3>Pruning &amp; Crown Work</h3>
+        <p>Crown lifting, reduction and deadwooding. Cuts made where the tree can actually heal, not hacked back.</p>
+        <a class="more" href="/tree-services/tree-pruning-perth">Learn more <span>&rarr;</span></a>
+      </article>
+      <article>
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18h18M3 13h18M3 8h18"/><path d="M7 8V5m5 3V5m5 3V5"/></svg></span>
+        <h3>Hedge Trimming</h3>
+        <p>Including tall hedges most crews cannot reach. Clean lines, sharp edges, every clipping taken away.</p>
+        <a class="more" href="/gardening-and-turf/hedge-trimming-perth">Learn more <span>&rarr;</span></a>
+      </article>
+      <article>
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17c4-6 12-6 16 0"/><path d="M7 17v3m5-3v3m5-3v3"/><path d="M12 11V3m0 0L9 6m3-3 3 3"/></svg></span>
+        <h3>Mulching &amp; Woodchipping</h3>
+        <p>We chip on site. Keep the mulch for your garden beds, or we take the lot away with us.</p>
+        <a class="more" href="/gardening-and-turf/tree-mulching-perth">Learn more <span>&rarr;</span></a>
+      </article>
+      <article>
+        <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3v18M18 3v18"/><path d="M6 8c6 3 6 3 12 0M6 14c6 3 6 3 12 0"/></svg></span>
+        <h3>Powerline Clearance</h3>
+        <p>Branches near service lines cleared to the required clearances, safely and to spec.</p>
+        <a class="more" href="/tree-services/powerline-clearance-perth">Learn more <span>&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="stack work">
+  <div class="wrap">
+    <div class="head-2col">
+      <div>
+        <span class="eyebrow">Recent work</span>
+        <h2>Perth trees,<br><em class="soft">Perth conditions.</em></h2>
+      </div>
+      <p class="lede" style="padding-bottom:.4rem">Marri, jarrah, lemon scented gums and the odd palm nobody wants. We work on them every week.</p>
+    </div>
+    <div class="work-grid">
+      <figure class="w-tall"><img src="img/climber.jpg" alt="An arborist roped up high in a Perth tree"><figcaption>Climbing</figcaption></figure>
+      <figure class="w-wide"><img src="img/crane.jpg" alt="A crane lifting a large tree section out of a Perth backyard"><figcaption>Crane removal</figcaption></figure>
+      <figure><img src="img/gardener.jpg" alt="A Kindest Cut gardener in yellow workwear on site"><figcaption>Gardening</figcaption></figure>
+      <figure><img src="img/cutting.jpg" alt="An arborist cutting a large limb with a chainsaw"><figcaption>Dismantling</figcaption></figure>
+      <figure><img src="img/high-trim.jpeg" alt="A worker trimming high branches above a Perth property"><figcaption>High pruning</figcaption></figure>
+      <figure><img src="img/excavator.png" alt="An excavator clearing cut branches after a removal"><figcaption>Clean up</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="stack why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <span class="eyebrow pale">Why The Kindest Cut</span>
+        <h2>Qualified arborists,<br><em class="soft" style="color:var(--amber-soft)">not blokes with a ute.</em></h2>
+        <div style="margin-top:1.8rem">
+          <div class="pt"><span class="n">1</span><div><b>Properly insured</b><p>Certificate of currency on request, before we start. Ask any arborist for one, and think twice if they hesitate.</p></div></div>
+          <div class="pt"><span class="n">2</span><div><b>Spider lift access</b><p>We reach tall hedges and awkward canopies that other crews have to quote around or turn down.</p></div></div>
+          <div class="pt"><span class="n">3</span><div><b>Fixed price, no surprises</b><p>We look at the tree, then give you a price. It does not move once we are on site.</p></div></div>
+          <div class="pt"><span class="n">4</span><div><b>Nothing left behind</b><p>Chipped on site. Keep the mulch for your beds or we take every last branch with us.</p></div></div>
+        </div>
+      </div>
+      <div class="why-media">
+        <img src="img/hero.jpg" alt="Two Kindest Cut arborists in safety gear working on a Perth tree">
+        <div class="why-tag"><b>7 days</b><span>Weekends by appointment</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AREAS ================= -->
+<section class="stack" id="areas">
+  <div class="wrap">
+    <div class="head-2col">
+      <div>
+        <span class="eyebrow">Where we work</span>
+        <h2>All of Perth,<br><em class="soft">river to the Hills.</em></h2>
+      </div>
+      <p class="lede" style="padding-bottom:.4rem">Based in Osborne Park, working north and south of the river and out through the Perth Hills.</p>
+    </div>
+    <div class="areas-grid">
+      <div>
+        <h3>North of the river</h3>
+        <ul>
+          <li><a href="/areas-we-serve/tree-lopping-leederville">Leederville</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-wembley">Wembley</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-nedlands">Nedlands</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-scarborough">Scarborough</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-claremont">Claremont</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-mount-lawley">Mount Lawley</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-subiaco">Subiaco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>South of the river</h3>
+        <ul>
+          <li><a href="/areas-we-serve/tree-lopping-coolbellup">Coolbellup</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-applecross">Applecross</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-booragoon">Booragoon</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-beaconsfield">Beaconsfield</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-spearwood">Spearwood</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-melville">Melville</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-fremantle">Fremantle</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Perth Hills</h3>
+        <ul>
+          <li><a href="/areas-we-serve/tree-lopping-kalamunda">Kalamunda</a></li>
+          <li><a href="/areas-we-serve/tree-lopping-forrestfield">Forrestfield</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Not on the list?</h3>
+        <p style="font-size:var(--t-sm)">We cover the whole metro area. Give us a call and we will tell you straight if you are out of range.</p>
+        <a class="btn line" style="margin-top:1rem" href="tel:+61403949123">Call 0403 949 123</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="stack work" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Straight answers</span>
+    <h2>What people ask<br><em class="soft">before they book.</em></h2>
+    <div class="faq">
+      <details open>
+        <summary>How much does tree removal cost in Perth?</summary>
+        <div class="a">It comes down to size, access and what is underneath. A small backyard tree with a clear run to the street is at the low end. A large gum overhanging a roof, needing rigging and a crane, is at the high end. We look at the tree first, then give you a fixed price that does not move.</div>
+      </details>
+      <details>
+        <summary>Do I need council approval to remove a tree?</summary>
+        <div class="a">Sometimes. Several Perth councils protect certain species, and trees over a set height or trunk size. We will tell you if we think yours is protected, and we can put together the arborist report the council asks for.</div>
+      </details>
+      <details>
+        <summary>Does home insurance cover tree removal?</summary>
+        <div class="a">Usually only where a tree has already caused damage, or come down in a storm. Routine removal of a healthy tree is almost never covered. Worth a call to your insurer before you book if a tree has already fallen.</div>
+      </details>
+      <details>
+        <summary>Do you take the branches and mulch away?</summary>
+        <div class="a">Yes, and it is in the quote. We chip on site, and you choose: keep the mulch for your garden beds, or we load the lot and take it with us.</div>
+      </details>
+      <details>
+        <summary>Are you insured?</summary>
+        <div class="a">Fully insured and qualified. We are happy to send the certificate of currency through before we start.</div>
+      </details>
+      <details>
+        <summary>Do you do emergency call outs?</summary>
+        <div class="a">Yes, outside working hours for genuine emergencies. A tree down after a storm, a limb over a driveway, anything unsafe. Call rather than email if it is urgent.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUOTE ================= -->
+<section class="stack quote" id="quote">
+  <div class="wrap">
+    <span class="eyebrow pale" style="justify-content:center">Free, no obligation</span>
+    <h2>Send us a photo of the tree.</h2>
+    <p>We can give you a rough idea over the phone and a fixed price once we have seen it. Most quotes come back the same day.</p>
+    <div class="row">
+      <a class="btn" href="tel:+61403949123">Call for a quote</a>
+      <a class="tel" href="tel:+61403949123">0403 949 123</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-line">The Kindest Cut Arborists</div>
+        <p>Fully insured, qualified arborists working across Perth north of the river, south of the river and the Perth Hills.</p>
+        <p style="margin-top:1rem">
+          <a href="tel:+61403949123">0403 949 123</a><br>
+          <a href="mailto:thekindestcutarb@gmail.com">thekindestcutarb@gmail.com</a><br>
+          Osborne Park, WA
+        </p>
+        <p style="margin-top:1rem">Mon to Fri 8am to 5pm<br>Weekends by appointment</p>
+      </div>
+      <div>
+        <h4>Tree Services</h4>
+        <ul>
+          <li><a href="/tree-services/tree-removal-perth">Tree Removal</a></li>
+          <li><a href="/tree-services/stump-grinding-perth">Stump Grinding</a></li>
+          <li><a href="/tree-services/tree-pruning-perth">Pruning &amp; Crown Work</a></li>
+          <li><a href="/tree-services/palm-tree-removal-perth">Palm Tree Removal</a></li>
+          <li><a href="/tree-services/powerline-clearance-perth">Powerline Clearance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gardening &amp; Turf</h4>
+        <ul>
+          <li><a href="/gardening-and-turf/hedge-trimming-perth">Hedge Trimming</a></li>
+          <li><a href="/gardening-and-turf/tree-mulching-perth">Mulching &amp; Woodchipping</a></li>
+          <li><a href="/gardening-and-turf/turf-maintenance-perth">Turf Maintenance</a></li>
+          <li><a href="/gardening-and-turf/reticulation-perth">Reticulation</a></li>
+          <li><a href="/gardening-and-turf/block-clearing-perth">Block Clearing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/areas-we-serve">Areas We Serve</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/tree-removal-cost-perth">What It Costs</a></li>
+          <li><a href="/advice">Advice</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="#quote">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 The Kindest Cut Arborists Pty Ltd</span>
+      <span>Osborne Park, Western Australia</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"LocalBusiness","@id":"https://kindestcutarb.com/#business",
+  "name":"The Kindest Cut Arborists",
+  "description":"Fully insured and qualified arborists serving Perth north of the river, south of the river and the Perth Hills. Tree removal, lopping, pruning, stump grinding, hedge trimming and mulching.",
+  "url":"https://kindestcutarb.com/","telephone":"+61403949123","email":"thekindestcutarb@gmail.com",
+  "address":{"@type":"PostalAddress","addressLocality":"Osborne Park","addressRegion":"WA","addressCountry":"AU"},
+  "areaServed":[{"@type":"City","name":"Perth"},{"@type":"AdministrativeArea","name":"Perth Hills"}],
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],
+  "hasOfferCatalog":{"@type":"OfferCatalog","name":"Arborist services","itemListElement":[
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tree Removal"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Stump Grinding"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tree Pruning"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Hedge Trimming"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mulching and Woodchipping"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Powerline Clearance"}}]}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How much does tree removal cost in Perth?","acceptedAnswer":{"@type":"Answer","text":"It comes down to size, access and what is underneath. A small backyard tree with a clear run to the street is at the low end. A large gum overhanging a roof, needing rigging and a crane, is at the high end. We look at the tree first, then give a fixed price."}},
+    {"@type":"Question","name":"Do I need council approval to remove a tree?","acceptedAnswer":{"@type":"Answer","text":"Sometimes. Several Perth councils protect certain species, and trees over a set height or trunk size. We will tell you if we think yours is protected, and we can prepare the arborist report the council asks for."}},
+    {"@type":"Question","name":"Does home insurance cover tree removal?","acceptedAnswer":{"@type":"Answer","text":"Usually only where a tree has already caused damage, or come down in a storm. Routine removal of a healthy tree is almost never covered."}},
+    {"@type":"Question","name":"Do you take the branches and mulch away?","acceptedAnswer":{"@type":"Answer","text":"Yes, and it is in the quote. We chip on site, and you choose whether to keep the mulch for your garden beds or have us take it away."}},
+    {"@type":"Question","name":"Are you insured?","acceptedAnswer":{"@type":"Answer","text":"Fully insured and qualified. We are happy to provide the certificate of currency before we start."}},
+    {"@type":"Question","name":"Do you do emergency call outs?","acceptedAnswer":{"@type":"Answer","text":"Yes, outside working hours for genuine emergencies such as a tree down after a storm or a limb over a driveway."}}]
+}
+</script>
+
+</body>
+</html>
