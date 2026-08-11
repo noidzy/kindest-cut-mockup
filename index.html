@@ -89,47 +89,54 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 .nav .wrap{display:flex;align-items:center;gap:1.5rem;padding-block:1.35rem}
 .logo{display:flex;align-items:center;gap:.6rem}
 .logo img{width:40px;height:40px}
-.logo b{font-family:var(--display);font-size:1.02rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;line-height:1.1}
-.logo b span{display:block;font-family:var(--sans);font-size:.56rem;font-weight:600;letter-spacing:.26em;color:var(--green)}
+.logo b{font-family:var(--display);font-size:1.02rem;font-weight:600;color:#fff;letter-spacing:-.01em;line-height:1.1}
+.logo b span{display:block;font-family:var(--sans);font-size:.56rem;font-weight:600;letter-spacing:.26em;color:var(--amber-soft)}
 .links{margin-left:auto;display:flex;align-items:center;gap:clamp(1rem,2.4vw,2.3rem)}
-.links a{font-size:var(--t-sm);font-weight:500;color:var(--ink);position:relative;padding-block:.3rem}
-.links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--green);transition:width .22s ease}
+.links a{font-size:var(--t-sm);font-weight:500;color:#e7efea;position:relative;padding-block:.3rem}
+.links a.tel{color:#fff}
+.links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--amber-soft);transition:width .22s ease}
 .links a:hover::after{width:100%}
-.burger{display:none;margin-left:auto;background:none;border:0;font-size:1.5rem;color:var(--ink);cursor:pointer;line-height:1}
+.burger{display:none;margin-left:auto;background:none;border:0;font-size:1.5rem;color:#fff;cursor:pointer;line-height:1}
 
 /* ---------------- hero ---------------- */
-.hero{position:relative;background:var(--paper);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.04fr 1fr;min-height:min(66vh,620px)}
+.hero{position:relative;background:var(--forest);overflow:hidden}
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:170px;z-index:3;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(4,48,31,.85) 0%,rgba(4,48,31,.45) 55%,rgba(4,48,31,0) 100%)
+}
+.hero-grid{display:grid;grid-template-columns:1.04fr 1fr;min-height:min(80vh,760px)}
 .hero-copy{
   position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center;
   padding:clamp(6rem,10vw,7.5rem) clamp(1.15rem,3vw,3rem) clamp(2.6rem,5vw,3.8rem) var(--gut)
 }
-.hero-copy h1{margin-bottom:1.15rem}
-.hero-copy .lede{max-width:42ch;font-size:var(--t-0)}
+.hero-copy h1{margin-bottom:1.15rem;color:#fff}
+.hero em.soft{color:var(--amber-soft)}
+.hero-copy .lede{max-width:42ch;font-size:var(--t-0);color:#bcd3c7}
+.hero .tel{color:#fff}
 .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem;margin-top:1.9rem}
 
 /* photo bleeds under the copy and dissolves into the paper, no hard seam */
 .hero-media{position:relative;z-index:1;margin-left:clamp(-11rem,-9vw,-3.5rem);overflow:hidden}
-.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.8) saturate(1.04)}
 .hero-media::before{
   content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(90deg,
-    var(--paper) 0%, rgba(248,246,241,.97) 14%, rgba(248,246,241,.72) 30%,
-    rgba(248,246,241,.28) 48%, rgba(248,246,241,0) 66%)
+    var(--forest) 0%, rgba(4,48,31,.97) 15%, rgba(4,48,31,.74) 32%,
+    rgba(4,48,31,.34) 52%, rgba(4,48,31,.08) 74%, rgba(4,48,31,0) 100%)
 }
 .hero-media::after{
-  content:'';position:absolute;left:0;right:0;bottom:0;height:38%;z-index:2;pointer-events:none;
-  background:linear-gradient(to top,var(--paper) 0%,rgba(248,246,241,0) 100%)
+  content:'';position:absolute;left:0;right:0;bottom:0;height:42%;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,var(--forest) 0%,rgba(4,48,31,.55) 45%,rgba(4,48,31,0) 100%)
 }
 
 /* ---------------- trust bar ---------------- */
-.bar{background:var(--forest);color:#cfe3d8}
+.bar{background:var(--paper-2);color:var(--ink);border-bottom:1px solid var(--line)}
 .bar ul{
   list-style:none;display:grid;grid-template-columns:repeat(4,1fr);
   padding-block:1.05rem;gap:.5rem 1.4rem
 }
 .bar li{display:flex;align-items:center;gap:.55rem;font-size:var(--t-sm);font-weight:500;letter-spacing:.01em}
-.bar svg{flex:none;color:var(--amber-soft)}
+.bar svg{flex:none;color:var(--green)}
 
 /* ---------------- services ---------------- */
 .head-2col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:end}
@@ -308,7 +315,7 @@ em.soft{font-style:italic;font-weight:400;color:var(--green)}
 <header class="hero">
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">Perth &middot; North, south &amp; the Hills</span>
+      <span class="eyebrow pale">Perth &middot; North, south &amp; the Hills</span>
       <h1>Tree work done<br><em class="soft">properly.</em></h1>
       <p class="lede">Fully insured, qualified arborists for removal, lopping, pruning and stump grinding. We turn up when we say, and we leave the place tidy.</p>
       <div class="hero-cta">
